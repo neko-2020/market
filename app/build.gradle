@@ -1,0 +1,56 @@
+//android插件
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+//插入了android插件，后面才可以用。
+android {
+    //编译应用android的版本号
+    compileSdkVersion 29
+    //构建应用的版本号，aapt,dex,打包过程中
+    buildToolsVersion "29.0.2"
+    //配置核心属性，可以覆盖manifest配置的属性
+    defaultConfig {
+        //覆盖manifest的package name，作为应用的唯一标志，R中的包名
+        applicationId "com.hfr.market"
+        minSdkVersion 14
+        //通知系统已经在该版本下通过测试，是稳定的，不用向下兼容
+        targetSdkVersion 29
+        //构建自己想要的版本号，manifest可以不用配置了
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false" //不显示log
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        }
+    }
+}
+
+//独立于android的一部分，所有的依赖包,依赖plugin插件
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.gms:play-services-plus:17.0.0'
+    implementation 'com.android.support:design:29.0.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation 'io.reactivex:rxandroid:1.1.0'
+    implementation 'org.greenrobot:greendao:3.2.2'
+
+}

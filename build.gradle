@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+//1、实际构建
+buildscript {
+    //代码仓库，第三方依赖包
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    //代码块在构建过程中，所需要依赖的包
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+//2，模块的属性，模块耦合到项目中
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

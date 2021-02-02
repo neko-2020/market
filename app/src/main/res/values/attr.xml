@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    针对控件里的元素来说的，用来控制元素在该控件里的显示位置-->
+    <declare-styleable name="FlowLayout">
+        <attr name="android:gravity" />
+        <attr name="horizonSpacing" format="dimension|reference"/>
+    </declare-styleable>
+    <!--    这个是针对控件本身而言，用来控制该控件在包含该控件的父控件中的位置-->
+    <declare-styleable name="FlowLayout_Layout">
+        <attr name="android:layout_gravity" />
+    </declare-styleable>
+</resources>

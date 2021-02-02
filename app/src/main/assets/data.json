@@ -1,0 +1,32 @@
+[
+  {
+    "price": 6,
+    "name": "Potato",
+    "type": "V"
+  },
+  {
+    "price": 9,
+    "name": "Cucumber",
+    "type": "V"
+  },
+  {
+    "price": 8,
+    "name": "Pumpkin",
+    "type": "V"
+  },
+  {
+    "price": 10,
+    "name": "apple",
+    "type": "F"
+  },
+  {
+    "price": 5,
+    "name": "banana",
+    "type": "F"
+  },
+  {
+    "price": 6,
+    "name": "Orange",
+    "type": "F"
+  }
+]
